@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://7015ua2p1p02"]
+
+[ext_resource type="Script" path="res://killzone.gd" id="1_1vmde"]
+[ext_resource type="AudioStream" uid="uid://cahbihd4077sa" path="res://audio/sound effects/Explosion.mp3" id="2_p720m"]
+
+[node name="killzone" type="Area2D"]
+script = ExtResource("1_1vmde")
+
+[node name="Player1DeathTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Player2DeathTimer" type="Timer" parent="."]
+
+[node name="Player3DeathTimer" type="Timer" parent="."]
+
+[node name="Player4DeathTimer" type="Timer" parent="."]
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_p720m")
+volume_db = 5.0
+bus = &"Attack Sound Effects"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Player1DeathTimer" to="." method="_on_player_1_death_timer_timeout"]
+[connection signal="timeout" from="Player2DeathTimer" to="." method="_on_player_2_death_timer_timeout"]
+[connection signal="timeout" from="Player3DeathTimer" to="." method="_on_player_3_death_timer_timeout"]
+[connection signal="timeout" from="Player4DeathTimer" to="." method="_on_player_4_death_timer_timeout"]
