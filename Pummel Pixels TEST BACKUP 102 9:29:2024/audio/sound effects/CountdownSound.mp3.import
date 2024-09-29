@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b747rv0c21pbt"
+path="res://.godot/imported/CountdownSound.mp3-be1fb1d8cb944db5dae1fa7069c33815.mp3str"
+
+[deps]
+
+source_file="res://audio/sound effects/CountdownSound.mp3"
+dest_files=["res://.godot/imported/CountdownSound.mp3-be1fb1d8cb944db5dae1fa7069c33815.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dlruqwcswony1"
+path="res://.godot/imported/SAttack3SwordSlash.mp3-6bd1ef22d4f405e5e6632bb7b3d5fd67.mp3str"
+
+[deps]
+
+source_file="res://audio/sound effects/SAttack3SwordSlash.mp3"
+dest_files=["res://.godot/imported/SAttack3SwordSlash.mp3-6bd1ef22d4f405e5e6632bb7b3d5fd67.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
