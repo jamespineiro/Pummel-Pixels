@@ -1,0 +1,1140 @@
+[gd_scene load_steps=50 format=3 uid="uid://cohj2dpxvsoii"]
+
+[ext_resource type="Texture2D" uid="uid://7xtguhnhqu2i" path="res://assets/MenuUI/GamemodeSelectorBackground.png" id="1_8qotd"]
+[ext_resource type="Script" path="res://gamemode_selector.gd" id="1_xiupo"]
+[ext_resource type="Texture2D" uid="uid://cxsim1ualjp7w" path="res://assets/MenuUI/2v2button.png" id="2_lsnwe"]
+[ext_resource type="Texture2D" uid="uid://hbm8h0uuiuar" path="res://assets/MenuUI/FFAButton.png" id="3_4fhi5"]
+[ext_resource type="FontFile" uid="uid://dhoipivpdsyok" path="res://Fonts/ThaleahFat.ttf" id="4_sff5o"]
+[ext_resource type="Texture2D" uid="uid://kd8qqt2kfpus" path="res://assets/MenuUI/ClassicButton.png" id="6_rxlcu"]
+[ext_resource type="Texture2D" uid="uid://2iaywnj3rlbb" path="res://assets/MenuUI/ClassicButton2.png" id="7_ht1ab"]
+[ext_resource type="Texture2D" uid="uid://dm46xxeol10el" path="res://assets/MenuUI/ClassicButton3.png" id="8_auad7"]
+[ext_resource type="Texture2D" uid="uid://b7txorkmcxx5l" path="res://assets/MenuUI/ClassicButton5.png" id="8_gdssg"]
+[ext_resource type="Texture2D" uid="uid://ctgefdpcmb5bb" path="res://assets/MenuUI/ClassicButton4.png" id="9_yri18"]
+[ext_resource type="Texture2D" uid="uid://c7yg6nycys5el" path="res://assets/MenuUI/ClassicButton6.png" id="10_qhjba"]
+[ext_resource type="Texture2D" uid="uid://2g06iibwrkw6" path="res://assets/MapPhotos/Map1and2.png" id="11_0l3m5"]
+[ext_resource type="Texture2D" uid="uid://bfc622apkap15" path="res://assets/MenuUI/ClassicButton7.png" id="12_n5ff4"]
+[ext_resource type="Texture2D" uid="uid://tt6e2icj7f3g" path="res://assets/MapPhotos/MapApproved.png" id="12_vgjlj"]
+[ext_resource type="Texture2D" uid="uid://b2l2eb4wasee8" path="res://assets/MapPhotos/Map14.png" id="13_aep7d"]
+[ext_resource type="Texture2D" uid="uid://d4c8v03tl4dqm" path="res://assets/MapPhotos/Map3and4.png" id="14_32sn7"]
+[ext_resource type="Texture2D" uid="uid://pkwe4wigonak" path="res://assets/MapPhotos/Map13.png" id="15_rugvj"]
+[ext_resource type="Texture2D" uid="uid://defrvs07gdk6n" path="res://assets/MapPhotos/Map5.png" id="16_pmcy6"]
+[ext_resource type="Texture2D" uid="uid://btr0py20e6bbq" path="res://assets/MapPhotos/Map6.png" id="17_kiq7g"]
+[ext_resource type="Texture2D" uid="uid://llra8t41prqg" path="res://assets/MapPhotos/Map7.png" id="18_7qoxb"]
+[ext_resource type="Texture2D" uid="uid://cok3jg2qeqsl7" path="res://assets/MapPhotos/Map8.png" id="19_6k0v4"]
+[ext_resource type="Texture2D" uid="uid://d4crod37lv0kk" path="res://assets/MapPhotos/Map9.png" id="20_0b2qw"]
+[ext_resource type="Texture2D" uid="uid://cchubgmaa6j3d" path="res://assets/MapPhotos/Map10.png" id="21_8wa0b"]
+[ext_resource type="Texture2D" uid="uid://drsrjsa1dli4f" path="res://assets/MapPhotos/Map11.png" id="21_eplfh"]
+[ext_resource type="Texture2D" uid="uid://bi2w5fdtbo802" path="res://assets/MapPhotos/Map12.png" id="23_e3835"]
+[ext_resource type="Texture2D" uid="uid://c8g1hphv3dlwh" path="res://assets/Player1Icon1.png" id="25_5gw6p"]
+[ext_resource type="Texture2D" uid="uid://c0eivmglf3a4g" path="res://assets/Player1Icon2.png" id="26_y0kx3"]
+[ext_resource type="Texture2D" uid="uid://ic2rn77s7vxx" path="res://assets/Player1Icon3.png" id="27_3y3ac"]
+[ext_resource type="Texture2D" uid="uid://bnaem08cwbiqw" path="res://assets/Player1Icon4.png" id="28_od7h3"]
+[ext_resource type="Texture2D" uid="uid://cs11xrdpsg31p" path="res://assets/Player1Icon.png" id="29_a0ndp"]
+[ext_resource type="Texture2D" uid="uid://b0qapbjpuj5dq" path="res://assets/Player2Icon1.png" id="30_40f08"]
+[ext_resource type="Texture2D" uid="uid://cfjo8bq2xfpmn" path="res://assets/Player2Icon2.png" id="31_gf3hc"]
+[ext_resource type="Texture2D" uid="uid://11eojniavw3t" path="res://assets/Player2Icon3.png" id="32_fcqg3"]
+[ext_resource type="Texture2D" uid="uid://doc0h72wa0g3r" path="res://assets/Player2Icon4.png" id="33_1bu3j"]
+[ext_resource type="Texture2D" uid="uid://dulap2b5mdlas" path="res://assets/Player2Icon.png" id="34_1hpkl"]
+[ext_resource type="Texture2D" uid="uid://dsh7hc1fwgikp" path="res://assets/Player3/Player3Icon1.png" id="35_ppok3"]
+[ext_resource type="Texture2D" uid="uid://crrfdikx8cw7m" path="res://assets/Player3/Player3Icon2.png" id="36_01a5v"]
+[ext_resource type="Texture2D" uid="uid://3u6nc8y83x10" path="res://assets/Player3/Player3Icon3.png" id="37_gdfht"]
+[ext_resource type="Texture2D" uid="uid://sf66c5tj5y8d" path="res://assets/Player3/Player3Icon4.png" id="38_wcpb7"]
+[ext_resource type="Texture2D" uid="uid://xdwowx13amy1" path="res://assets/Player3/Player3Photo.png" id="39_keuj6"]
+[ext_resource type="Texture2D" uid="uid://dspnbtmhe57s" path="res://assets/Player4/Player4Icon1.png" id="40_r24rg"]
+[ext_resource type="Texture2D" uid="uid://mxh8ur3xgupr" path="res://assets/Player4/Player4Icon2.png" id="41_8rarq"]
+[ext_resource type="Texture2D" uid="uid://bhpctqg2q5ol7" path="res://assets/Player4/Player4Icon3.png" id="42_ji4hc"]
+[ext_resource type="Texture2D" uid="uid://cx350qj5wmy62" path="res://assets/Player4/Player4Icon4.png" id="43_mhnrx"]
+[ext_resource type="Texture2D" uid="uid://bkcaiun1l81ta" path="res://assets/Player4/Player4Photo.png" id="44_4odgj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c3t74"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_5gw6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_y0kx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_3y3ac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_od7h3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pb2gn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_40f08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_gf3hc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_fcqg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_1bu3j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vtjbd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_ppok3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_01a5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_gdfht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_wcpb7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8eir8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_r24rg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_8rarq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_ji4hc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_mhnrx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="GamemodeSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xiupo")
+
+[node name="TeammodeSelectNodes" type="Control" parent="."]
+z_index = 1
+anchors_preset = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 46.0
+offset_bottom = 46.0
+
+[node name="2V2Button" type="Button" parent="TeammodeSelectNodes"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 18.0
+offset_right = 479.0
+offset_bottom = 122.0
+scale = Vector2(3, 3)
+focus_neighbor_left = NodePath("../FFAButton")
+focus_neighbor_right = NodePath("../FFAButton")
+focus_next = NodePath("../FFAButton")
+focus_previous = NodePath("../FFAButton")
+icon = ExtResource("2_lsnwe")
+
+[node name="FFAButton" type="Button" parent="TeammodeSelectNodes"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 18.0
+offset_right = 156.0
+offset_bottom = 122.0
+scale = Vector2(3, 3)
+focus_neighbor_left = NodePath("../2V2Button")
+focus_neighbor_right = NodePath("../2V2Button")
+focus_next = NodePath("../2V2Button")
+focus_previous = NodePath("../2V2Button")
+icon = ExtResource("3_4fhi5")
+
+[node name="FFALabel" type="Label" parent="TeammodeSelectNodes"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 135.0
+offset_right = 374.0
+offset_bottom = 378.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.215902, 0.215902, 0.215902, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 30
+theme_override_fonts/font = ExtResource("4_sff5o")
+theme_override_font_sizes/font_size = 80
+text = "FFA
+
+"
+horizontal_alignment = 1
+
+[node name="2V2Label" type="Label" parent="TeammodeSelectNodes"]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 135.0
+offset_right = 693.0
+offset_bottom = 378.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.215902, 0.215902, 0.215902, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 30
+theme_override_fonts/font = ExtResource("4_sff5o")
+theme_override_font_sizes/font_size = 80
+text = "2V2
+"
+horizontal_alignment = 1
+
+[node name="TopLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 77.0
+offset_top = -76.0
+offset_right = 677.0
+offset_bottom = 167.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.215902, 0.215902, 0.215902, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 30
+theme_override_fonts/font = ExtResource("4_sff5o")
+theme_override_font_sizes/font_size = 80
+text = "TEAM MODE SELECT
+"
+horizontal_alignment = 1
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3, 3)
+texture = ExtResource("1_8qotd")
+
+[node name="GamemodeButtons" type="Control" parent="."]
+z_index = 3
+anchors_preset = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 46.0
+offset_bottom = 46.0
+scale = Vector2(3, 3)
+
+[node name="ClassicButton" type="Button" parent="GamemodeButtons"]
+visible = false
+layout_mode = 0
+offset_left = -0.666667
+offset_top = -0.666667
+offset_right = 57.3333
+offset_bottom = 22.3333
+focus_neighbor_left = NodePath("../ArrowRainButton")
+focus_neighbor_right = NodePath("../ArrowRainButton")
+focus_neighbor_bottom = NodePath("../SuperSizedButton")
+focus_next = NodePath("../ArrowRainButton")
+icon = ExtResource("6_rxlcu")
+flat = true
+
+[node name="ClassicLabel" type="Label" parent="GamemodeButtons/ClassicButton"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 334.0
+offset_bottom = 250.0
+scale = Vector2(0.12, 0.12)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.215902, 0.215902, 0.215902, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_sff5o")
+theme_override_font_sizes/font_size = 80
+text = "CLASSIC"
+horizontal_alignment = 1
+
+[node name="ArrowRainButton" type="Button" parent="GamemodeButtons"]
+visible = false
+layout_mode = 0
+offset_left = 48.3333
+offset_top = -0.666667
+offset_right = 106.333
+offset_bottom = 22.3333
+focus_neighbor_left = NodePath("../ClassicButton")
+focus_neighbor_right = NodePath("../ClassicButton")
+focus_neighbor_bottom = NodePath("../ZombiesButton")
+focus_next = NodePath("../SuperSizedButton")
+focus_previous = NodePath("../ClassicButton")
+icon = ExtResource("7_ht1ab")
+flat = true
+
+[node name="ArrowRainLabel" type="Label" parent="GamemodeButtons/ArrowRainButton"]
+layout_mode = 0
+offset_left = 7.33333
+offset_top = 6.667
+offset_right = 367.333
+offset_bottom = 249.667
+scale = Vector2(0.12, 0.12)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.215902, 0.215902, 0.215902, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_sff5o")
+theme_override_font_sizes/font_size = 80
+text = "ARROW RAIN"
+horizontal_alignment = 1
+
+[node name="SuperSizedButton" type="Button" parent="GamemodeButtons"]
+visible = false
+layout_mode = 0
+offset_left = -0.666667
+offset_top = 13.3333
+offset_right = 57.3333
+offset_bottom = 36.3333
+focus_neighbor_left = NodePath("../ZombiesButton")
+focus_neighbor_top = NodePath("../ClassicButton")
+focus_neighbor_right = NodePath("../ZombiesButton")
+focus_neighbor_bottom = NodePath("../WantedButton")
+focus_next = NodePath("../ZombiesButton")
+focus_previous = NodePath("../ZombiesButton")
+icon = ExtResource("8_gdssg")
+flat = true
+
+[node name="SuperSizedLabel" type="Label" parent="GamemodeButtons/SuperSizedButton"]
+layout_mode = 0
+offset_left = 7.33333
+offset_top = 6.667
+offset_right = 367.333
+offset_bottom = 249.667
+scale = Vector2(0.12, 0.12)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.215902, 0.215902, 0.215902, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_sff5o")
+theme_override_font_sizes/font_size = 80
+text = "SUPERSIZED"
+horizontal_alignment = 1
+
+[node name="ZombiesButton" type="Button" parent="GamemodeButtons"]
+visible = false
+layout_mode = 0
+offset_left = 48.0
+offset_top = 13.3333
+offset_right = 106.0
+offset_bottom = 36.3333
+focus_neighbor_left = NodePath("../SuperSizedButton")
+focus_neighbor_top = NodePath("../ArrowRainButton")
+focus_neighbor_right = NodePath("../SuperSizedButton")
+focus_neighbor_bottom = NodePath("../JuggernautButton")
+focus_next = NodePath("../WantedButton")
+focus_previous = NodePath("../SuperSizedButton")
+icon = ExtResource("9_yri18")
+flat = true
+
+[node name="ZombiesLabel" type="Label" parent="GamemodeButtons/ZombiesButton"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.667
+offset_right = 368.0
+offset_bottom = 249.667
+scale = Vector2(0.12, 0.12)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.215902, 0.215902, 0.215902, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_sff5o")
+theme_override_font_sizes/font_size = 80
+text = "ZOMBIES"
+horizontal_alignment = 1
+
+[node name="WantedButton" type="Button" parent="GamemodeButtons"]
+visible = false
+layout_mode = 0
+offset_left = -0.666667
+offset_top = 27.0
+offset_right = 57.3333
+offset_bottom = 50.0
+focus_neighbor_left = NodePath("../JuggernautButton")
+focus_neighbor_top = NodePath("../SuperSizedButton")
+focus_neighbor_right = NodePath("../JuggernautButton")
+focus_neighbor_bottom = NodePath("../PracticeButton")
+focus_next = NodePath("../JuggernautButton")
+focus_previous = NodePath("../JuggernautButton")
+icon = ExtResource("10_qhjba")
+flat = true
+
+[node name="WantedLabel" type="Label" parent="GamemodeButtons/WantedButton"]
+layout_mode = 0
+offset_left = 7.33333
+offset_top = 6.667
+offset_right = 367.333
+offset_bottom = 249.667
+scale = Vector2(0.12, 0.12)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.215902, 0.215902, 0.215902, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_sff5o")
+theme_override_font_sizes/font_size = 80
+text = "WANTED
+"
+horizontal_alignment = 1
+
+[node name="JuggernautButton" type="Button" parent="GamemodeButtons"]
+visible = false
+layout_mode = 0
+offset_left = 48.0
+offset_top = 27.3333
+offset_right = 106.0
+offset_bottom = 50.3333
+focus_neighbor_left = NodePath("../WantedButton")
+focus_neighbor_top = NodePath("../ZombiesButton")
+focus_neighbor_right = NodePath("../WantedButton")
+focus_next = NodePath("../WantedButton")
+focus_previous = NodePath("../WantedButton")
+icon = ExtResource("8_auad7")
+flat = true
+
+[node name="WantedLabel" type="Label" parent="GamemodeButtons/JuggernautButton"]
+layout_mode = 0
+offset_left = 5.66667
+offset_top = 6.667
+offset_right = 400.667
+offset_bottom = 249.667
+scale = Vector2(0.12, 0.12)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.215902, 0.215902, 0.215902, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_sff5o")
+theme_override_font_sizes/font_size = 76
+text = "JUGGERNAUT
+"
+horizontal_alignment = 1
+
+[node name="GamemodeLabel" type="Label" parent="GamemodeButtons"]
+visible = false
+layout_mode = 0
+offset_left = 115.333
+offset_top = 9.0
+offset_right = 715.333
+offset_bottom = 252.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.619608, 0.121569, 0.0941176, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 30
+theme_override_fonts/font = ExtResource("4_sff5o")
+theme_override_font_sizes/font_size = 100
+text = "CLASSIC
+"
+horizontal_alignment = 1
+
+[node name="GamemodeDescriptionLabel" type="Label" parent="GamemodeButtons"]
+visible = false
+layout_mode = 0
+offset_left = 131.333
+offset_top = 28.6667
+offset_right = 731.333
+offset_bottom = 633.667
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.70388, 0.396744, 0.207221, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 30
+theme_override_constants/line_spacing = -15
+theme_override_fonts/font = ExtResource("4_sff5o")
+theme_override_font_sizes/font_size = 65
+text = "DEAL DAMAGE TO YOUR OPPONENTS TO KNOCK THEM BACK FURTHER AND FURTHER WITH EACH HIT! KNOCK THEM OUT OF THE MAP TO SCORE POINTS AND WIN THE GAME!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PracticeButton" type="Button" parent="GamemodeButtons"]
+visible = false
+layout_mode = 0
+offset_left = -0.666668
+offset_top = 94.0
+offset_right = 57.3333
+offset_bottom = 117.0
+focus_neighbor_top = NodePath("../WantedButton")
+icon = ExtResource("12_n5ff4")
+flat = true
+
+[node name="PracticeLabel" type="Label" parent="GamemodeButtons/PracticeButton"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.667
+offset_right = 400.0
+offset_bottom = 249.667
+scale = Vector2(0.12, 0.12)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.215902, 0.215902, 0.215902, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_sff5o")
+theme_override_font_sizes/font_size = 76
+text = "PRACTICE
+"
+horizontal_alignment = 1
+
+[node name="MapButtons" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SandMapButton" type="Button" parent="MapButtons"]
+self_modulate = Color(1, 1, 0, 1)
+layout_mode = 0
+offset_left = 27.0
+offset_top = 25.0
+offset_right = 2653.0
+offset_bottom = 1621.0
+scale = Vector2(0.04, 0.04)
+focus_neighbor_left = NodePath("../ContinueButton")
+focus_neighbor_right = NodePath("../SandMapMovingButton")
+focus_neighbor_bottom = NodePath("../PinkMapPillarsButton")
+focus_next = NodePath("../SandMapMovingButton")
+focus_previous = NodePath("../ContinueButton")
+icon = ExtResource("11_0l3m5")
+
+[node name="ButtonApproval" type="TextureRect" parent="MapButtons/SandMapButton"]
+layout_mode = 0
+offset_right = 2618.0
+offset_bottom = 1588.0
+texture = ExtResource("12_vgjlj")
+
+[node name="SandMapMovingButton" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 25.0
+offset_right = 2771.0
+offset_bottom = 1621.0
+scale = Vector2(0.04, 0.04)
+focus_neighbor_left = NodePath("../SandMapButton")
+focus_neighbor_right = NodePath("../SandMapBigButton")
+focus_neighbor_bottom = NodePath("../PinkMapRisingButton")
+focus_next = NodePath("../SandMapBigButton")
+focus_previous = NodePath("../SandMapButton")
+icon = ExtResource("11_0l3m5")
+
+[node name="ButtonApproval" type="TextureRect" parent="MapButtons/SandMapMovingButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_vgjlj")
+
+[node name="SandMapBigButton" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 25.0
+offset_right = 2890.0
+offset_bottom = 1621.0
+scale = Vector2(0.04, 0.04)
+focus_neighbor_left = NodePath("../SandMapMovingButton")
+focus_neighbor_right = NodePath("../GrassMapButton")
+focus_neighbor_bottom = NodePath("../PurpleMapSmallButton")
+focus_next = NodePath("../GrassMapButton")
+focus_previous = NodePath("../SandMapMovingButton")
+icon = ExtResource("13_aep7d")
+
+[node name="ButtonApproval" type="TextureRect" parent="MapButtons/SandMapBigButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_vgjlj")
+
+[node name="GrassMapButton" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 25.0
+offset_right = 3008.0
+offset_bottom = 1621.0
+scale = Vector2(0.04, 0.04)
+focus_neighbor_left = NodePath("../SandMapBigButton")
+focus_neighbor_right = NodePath("../GrassMapMovingButton")
+focus_neighbor_bottom = NodePath("../PurpleMapBigButton")
+focus_next = NodePath("../GrassMapMovingButton")
+focus_previous = NodePath("../SandMapBigButton")
+icon = ExtResource("14_32sn7")
+
+[node name="ButtonApproval" type="TextureRect" parent="MapButtons/GrassMapButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_vgjlj")
+
+[node name="GrassMapMovingButton" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 25.0
+offset_right = 3127.0
+offset_bottom = 1621.0
+scale = Vector2(0.04, 0.04)
+focus_neighbor_left = NodePath("../GrassMapButton")
+focus_neighbor_right = NodePath("../GrassMapBigButton")
+focus_neighbor_bottom = NodePath("../CastleMapCagesButton")
+focus_next = NodePath("../GrassMapBigButton")
+focus_previous = NodePath("../GrassMapButton")
+icon = ExtResource("14_32sn7")
+
+[node name="ButtonApproval" type="TextureRect" parent="MapButtons/GrassMapMovingButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_vgjlj")
+
+[node name="GrassMapBigButton" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 618.0
+offset_top = 25.0
+offset_right = 3244.0
+offset_bottom = 1621.0
+scale = Vector2(0.04, 0.04)
+focus_neighbor_left = NodePath("../GrassMapMovingButton")
+focus_neighbor_right = NodePath("../PinkMapPillarsButton")
+focus_neighbor_bottom = NodePath("../CastleWallMapButton")
+focus_next = NodePath("../PinkMapPillarsButton")
+focus_previous = NodePath("../GrassMapMovingButton")
+icon = ExtResource("15_rugvj")
+
+[node name="ButtonApproval" type="TextureRect" parent="MapButtons/GrassMapBigButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_vgjlj")
+
+[node name="PinkMapPillarsButton" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 101.0
+offset_right = 2653.0
+offset_bottom = 1697.0
+scale = Vector2(0.04, 0.04)
+focus_neighbor_left = NodePath("../GrassMapBigButton")
+focus_neighbor_top = NodePath("../SandMapButton")
+focus_neighbor_right = NodePath("../PinkMapRisingButton")
+focus_neighbor_bottom = NodePath("../CastleWallMapRisingLavaButton")
+focus_next = NodePath("../PinkMapRisingButton")
+focus_previous = NodePath("../GrassMapBigButton")
+icon = ExtResource("16_pmcy6")
+
+[node name="ButtonApproval" type="TextureRect" parent="MapButtons/PinkMapPillarsButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_vgjlj")
+
+[node name="PinkMapRisingButton" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 101.0
+offset_right = 2771.0
+offset_bottom = 1697.0
+scale = Vector2(0.04, 0.04)
+focus_neighbor_left = NodePath("../PinkMapPillarsButton")
+focus_neighbor_top = NodePath("../SandMapMovingButton")
+focus_neighbor_right = NodePath("../PurpleMapSmallButton")
+focus_neighbor_bottom = NodePath("../WorkShopMapButton")
+focus_next = NodePath("../PurpleMapSmallButton")
+focus_previous = NodePath("../PinkMapPillarsButton")
+icon = ExtResource("17_kiq7g")
+
+[node name="ButtonApproval" type="TextureRect" parent="MapButtons/PinkMapRisingButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_vgjlj")
+
+[node name="PurpleMapSmallButton" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 101.0
+offset_right = 2890.0
+offset_bottom = 1697.0
+scale = Vector2(0.04, 0.04)
+focus_neighbor_left = NodePath("../PinkMapRisingButton")
+focus_neighbor_top = NodePath("../SandMapBigButton")
+focus_neighbor_right = NodePath("../PurpleMapBigButton")
+focus_neighbor_bottom = NodePath("../NightCaveMapButton")
+focus_next = NodePath("../PurpleMapBigButton")
+focus_previous = NodePath("../PinkMapRisingButton")
+icon = ExtResource("18_7qoxb")
+
+[node name="ButtonApproval" type="TextureRect" parent="MapButtons/PurpleMapSmallButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_vgjlj")
+
+[node name="PurpleMapBigButton" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 101.0
+offset_right = 3008.0
+offset_bottom = 1697.0
+scale = Vector2(0.04, 0.04)
+focus_neighbor_left = NodePath("../PurpleMapSmallButton")
+focus_neighbor_top = NodePath("../GrassMapButton")
+focus_neighbor_right = NodePath("../CastleMapCagesButton")
+focus_neighbor_bottom = NodePath("../GrassMapButton2")
+focus_next = NodePath("../CastleMapCagesButton")
+focus_previous = NodePath("../PurpleMapSmallButton")
+icon = ExtResource("19_6k0v4")
+
+[node name="ButtonApproval" type="TextureRect" parent="MapButtons/PurpleMapBigButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_vgjlj")
+
+[node name="CastleMapCagesButton" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 101.0
+offset_right = 3127.0
+offset_bottom = 1697.0
+scale = Vector2(0.04, 0.04)
+focus_neighbor_left = NodePath("../PurpleMapBigButton")
+focus_neighbor_top = NodePath("../GrassMapMovingButton")
+focus_neighbor_right = NodePath("../CastleWallMapButton")
+focus_neighbor_bottom = NodePath("../GrassMapMovingButton2")
+focus_next = NodePath("../CastleWallMapButton")
+focus_previous = NodePath("../PurpleMapBigButton")
+icon = ExtResource("20_0b2qw")
+
+[node name="ButtonApproval" type="TextureRect" parent="MapButtons/CastleMapCagesButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_vgjlj")
+
+[node name="CastleWallMapButton" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 618.0
+offset_top = 101.0
+offset_right = 3244.0
+offset_bottom = 1697.0
+scale = Vector2(0.04, 0.04)
+focus_neighbor_left = NodePath("../CastleMapCagesButton")
+focus_neighbor_top = NodePath("../GrassMapBigButton")
+focus_neighbor_right = NodePath("../CastleWallMapRisingLavaButton")
+focus_neighbor_bottom = NodePath("../GrassMapBigButton2")
+focus_next = NodePath("../CastleWallMapRisingLavaButton")
+focus_previous = NodePath("../CastleMapCagesButton")
+icon = ExtResource("21_eplfh")
+
+[node name="ButtonApproval" type="TextureRect" parent="MapButtons/CastleWallMapButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_vgjlj")
+
+[node name="CastleWallMapRisingLavaButton" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 179.0
+offset_right = 2653.0
+offset_bottom = 1775.0
+scale = Vector2(0.04, 0.04)
+focus_neighbor_left = NodePath("../CastleWallMapButton")
+focus_neighbor_top = NodePath("../PinkMapPillarsButton")
+focus_neighbor_right = NodePath("../WorkShopMapButton")
+focus_neighbor_bottom = NodePath("../SelectAllButton")
+focus_next = NodePath("../WorkShopMapButton")
+focus_previous = NodePath("../CastleWallMapButton")
+icon = ExtResource("21_eplfh")
+
+[node name="ButtonApproval" type="TextureRect" parent="MapButtons/CastleWallMapRisingLavaButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_vgjlj")
+
+[node name="WorkShopMapButton" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 179.0
+offset_right = 2771.0
+offset_bottom = 1775.0
+scale = Vector2(0.04, 0.04)
+focus_neighbor_left = NodePath("../CastleWallMapRisingLavaButton")
+focus_neighbor_top = NodePath("../PinkMapRisingButton")
+focus_neighbor_right = NodePath("../NightCaveMapButton")
+focus_neighbor_bottom = NodePath("../SelectAllButton")
+focus_next = NodePath("../NightCaveMapButton")
+focus_previous = NodePath("../CastleWallMapRisingLavaButton")
+icon = ExtResource("21_8wa0b")
+
+[node name="ButtonApproval" type="TextureRect" parent="MapButtons/WorkShopMapButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_vgjlj")
+
+[node name="NightCaveMapButton" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 179.0
+offset_right = 2890.0
+offset_bottom = 1775.0
+scale = Vector2(0.04, 0.04)
+focus_neighbor_left = NodePath("../WorkShopMapButton")
+focus_neighbor_top = NodePath("../PurpleMapSmallButton")
+focus_neighbor_right = NodePath("../GrassMapButton2")
+focus_neighbor_bottom = NodePath("../SelectAllButton")
+focus_next = NodePath("../GrassMapButton2")
+focus_previous = NodePath("../WorkShopMapButton")
+icon = ExtResource("23_e3835")
+
+[node name="ButtonApproval" type="TextureRect" parent="MapButtons/NightCaveMapButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_vgjlj")
+
+[node name="GrassMapButton2" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 179.0
+offset_right = 3008.0
+offset_bottom = 1775.0
+scale = Vector2(0.04, 0.04)
+focus_neighbor_left = NodePath("../NightCaveMapButton")
+focus_neighbor_top = NodePath("../PurpleMapBigButton")
+focus_neighbor_right = NodePath("../GrassMapMovingButton2")
+focus_neighbor_bottom = NodePath("../SelectNoneButton")
+focus_next = NodePath("../GrassMapMovingButton2")
+focus_previous = NodePath("../NightCaveMapButton")
+icon = ExtResource("14_32sn7")
+
+[node name="ButtonApproval" type="TextureRect" parent="MapButtons/GrassMapButton2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_vgjlj")
+
+[node name="GrassMapMovingButton2" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 179.0
+offset_right = 3127.0
+offset_bottom = 1775.0
+scale = Vector2(0.04, 0.04)
+focus_neighbor_left = NodePath("../GrassMapButton2")
+focus_neighbor_top = NodePath("../CastleMapCagesButton")
+focus_neighbor_right = NodePath("../GrassMapBigButton2")
+focus_neighbor_bottom = NodePath("../SelectNoneButton")
+focus_next = NodePath("../GrassMapBigButton2")
+focus_previous = NodePath("../GrassMapButton2")
+icon = ExtResource("14_32sn7")
+
+[node name="ButtonApproval" type="TextureRect" parent="MapButtons/GrassMapMovingButton2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_vgjlj")
+
+[node name="GrassMapBigButton2" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 618.0
+offset_top = 179.0
+offset_right = 3244.0
+offset_bottom = 1775.0
+scale = Vector2(0.04, 0.04)
+focus_neighbor_left = NodePath("../GrassMapMovingButton2")
+focus_neighbor_top = NodePath("../CastleWallMapButton")
+focus_neighbor_right = NodePath("../ContinueButton")
+focus_neighbor_bottom = NodePath("../ContinueButton")
+focus_next = NodePath("../ContinueButton")
+focus_previous = NodePath("../GrassMapMovingButton2")
+icon = ExtResource("15_rugvj")
+
+[node name="ButtonApproval" type="TextureRect" parent="MapButtons/GrassMapBigButton2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_vgjlj")
+
+[node name="SelectAllButton" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 261.0
+offset_right = 294.0
+offset_bottom = 284.0
+scale = Vector2(3, 3)
+focus_neighbor_left = NodePath("../ContinueButton")
+focus_neighbor_top = NodePath("../NightCaveMapButton")
+focus_neighbor_right = NodePath("../SelectNoneButton")
+focus_next = NodePath("../SelectNoneButton/NoneLabel")
+focus_previous = NodePath("../ContinueButton")
+icon = ExtResource("9_yri18")
+flat = true
+
+[node name="AllLabel" type="Label" parent="MapButtons/SelectAllButton"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 387.0
+offset_bottom = 250.0
+scale = Vector2(0.12, 0.12)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.215902, 0.215902, 0.215902, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_sff5o")
+theme_override_font_sizes/font_size = 80
+text = "ALL"
+horizontal_alignment = 1
+
+[node name="SelectNoneButton" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 261.0
+offset_right = 456.0
+offset_bottom = 284.0
+scale = Vector2(3, 3)
+focus_neighbor_left = NodePath("../SelectAllButton")
+focus_neighbor_top = NodePath("../GrassMapButton2")
+focus_neighbor_right = NodePath("../ContinueButton")
+focus_next = NodePath("../ContinueButton")
+focus_previous = NodePath("../SelectAllButton")
+icon = ExtResource("8_auad7")
+flat = true
+
+[node name="NoneLabel" type="Label" parent="MapButtons/SelectNoneButton"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 387.0
+offset_bottom = 250.0
+scale = Vector2(0.12, 0.12)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.215902, 0.215902, 0.215902, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_sff5o")
+theme_override_font_sizes/font_size = 80
+text = "None
+"
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="MapButtons"]
+layout_mode = 0
+offset_left = 559.0
+offset_top = 261.0
+offset_right = 617.0
+offset_bottom = 284.0
+scale = Vector2(3, 3)
+focus_neighbor_left = NodePath("../SelectNoneButton")
+focus_neighbor_top = NodePath("../GrassMapBigButton2")
+focus_neighbor_right = NodePath("../SelectAllButton")
+focus_previous = NodePath("../SelectNoneButton")
+icon = ExtResource("6_rxlcu")
+flat = true
+
+[node name="ContinueLabel" type="Label" parent="MapButtons/ContinueButton"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 387.0
+offset_bottom = 250.0
+scale = Vector2(0.12, 0.12)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.215902, 0.215902, 0.215902, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_sff5o")
+theme_override_font_sizes/font_size = 80
+text = "CONTINUE
+"
+horizontal_alignment = 1
+
+[node name="MapNameLabel" type="Label" parent="MapButtons"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 232.0
+offset_right = 416.0
+offset_bottom = 475.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.215902, 0.215902, 0.215902, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 25
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/line_spacing = -20
+theme_override_fonts/font = ExtResource("4_sff5o")
+theme_override_font_sizes/font_size = 60
+text = "SANDY PLATFORM (1v1)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CharacterSelectButtons" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 45.0
+offset_top = 96.0
+offset_right = 85.0
+offset_bottom = 136.0
+scale = Vector2(8, 8)
+
+[node name="Player1Icon" type="AnimatedSprite2D" parent="CharacterSelectButtons"]
+position = Vector2(11, 10)
+sprite_frames = SubResource("SpriteFrames_c3t74")
+autoplay = "default"
+
+[node name="Player1Button" type="Button" parent="CharacterSelectButtons/Player1Icon"]
+offset_left = -11.0
+offset_top = -11.125
+offset_right = 11.0
+offset_bottom = 10.875
+focus_neighbor_left = NodePath("../../Player4Icon/Player4Button")
+focus_neighbor_right = NodePath("../../Player2Icon/Player2Button")
+focus_next = NodePath("../../Player2Icon/Player2Button")
+focus_previous = NodePath("../../Player4Icon/Player4Button")
+icon = ExtResource("29_a0ndp")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Player2Icon" type="AnimatedSprite2D" parent="CharacterSelectButtons"]
+position = Vector2(31.375, 10)
+sprite_frames = SubResource("SpriteFrames_pb2gn")
+autoplay = "default"
+
+[node name="Player2Button" type="Button" parent="CharacterSelectButtons/Player2Icon"]
+offset_left = -11.0
+offset_top = -11.125
+offset_right = 11.0
+offset_bottom = 10.875
+focus_neighbor_left = NodePath("../../Player1Icon/Player1Button")
+focus_neighbor_right = NodePath("../../Player3Icon/Player3Button")
+focus_next = NodePath("../../Player3Icon/Player3Button")
+focus_previous = NodePath("../../Player1Icon/Player1Button")
+icon = ExtResource("34_1hpkl")
+flat = true
+
+[node name="Player3Icon" type="AnimatedSprite2D" parent="CharacterSelectButtons"]
+position = Vector2(52.125, 10)
+sprite_frames = SubResource("SpriteFrames_vtjbd")
+autoplay = "default"
+
+[node name="Player3Button" type="Button" parent="CharacterSelectButtons/Player3Icon"]
+offset_left = -11.0
+offset_top = -11.125
+offset_right = 11.0
+offset_bottom = 10.875
+focus_neighbor_left = NodePath("../../Player2Icon/Player2Button")
+focus_neighbor_right = NodePath("../../Player4Icon/Player4Button")
+focus_next = NodePath("../../Player4Icon/Player4Button")
+focus_previous = NodePath("../../Player2Icon/Player2Button")
+icon = ExtResource("39_keuj6")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Player4Icon" type="AnimatedSprite2D" parent="CharacterSelectButtons"]
+position = Vector2(72.5, 10)
+sprite_frames = SubResource("SpriteFrames_8eir8")
+autoplay = "default"
+
+[node name="Player4Button" type="Button" parent="CharacterSelectButtons/Player4Icon"]
+offset_left = -11.0
+offset_top = -11.125
+offset_right = 11.0
+offset_bottom = 10.875
+focus_neighbor_left = NodePath("../../Player3Icon/Player3Button")
+focus_neighbor_right = NodePath("../../Player1Icon/Player1Button")
+focus_next = NodePath("../../Player1Icon/Player1Button")
+focus_previous = NodePath("../../Player3Icon/Player3Button")
+icon = ExtResource("44_4odgj")
+flat = true
+
+[connection signal="pressed" from="TeammodeSelectNodes/2V2Button" to="." method="_on_v_2_button_pressed"]
+[connection signal="pressed" from="TeammodeSelectNodes/FFAButton" to="." method="_on_ffa_button_pressed"]
+[connection signal="pressed" from="GamemodeButtons/ClassicButton" to="." method="_on_classic_button_pressed"]
+[connection signal="pressed" from="GamemodeButtons/ArrowRainButton" to="." method="_on_arrow_rain_button_pressed"]
+[connection signal="pressed" from="GamemodeButtons/SuperSizedButton" to="." method="_on_super_sized_button_pressed"]
+[connection signal="pressed" from="GamemodeButtons/ZombiesButton" to="." method="_on_zombies_button_pressed"]
+[connection signal="pressed" from="GamemodeButtons/WantedButton" to="." method="_on_wanted_button_pressed"]
+[connection signal="pressed" from="GamemodeButtons/JuggernautButton" to="." method="_on_juggernaut_button_pressed"]
+[connection signal="pressed" from="GamemodeButtons/PracticeButton" to="." method="_on_practice_button_pressed"]
+[connection signal="pressed" from="MapButtons/SandMapButton" to="." method="_on_sand_map_button_pressed"]
+[connection signal="pressed" from="MapButtons/SandMapMovingButton" to="." method="_on_sand_map_moving_button_pressed"]
+[connection signal="pressed" from="MapButtons/SandMapBigButton" to="." method="_on_sand_map_big_button_pressed"]
+[connection signal="pressed" from="MapButtons/GrassMapButton" to="." method="_on_grass_map_button_pressed"]
+[connection signal="pressed" from="MapButtons/GrassMapMovingButton" to="." method="_on_grass_map_moving_button_pressed"]
+[connection signal="pressed" from="MapButtons/GrassMapBigButton" to="." method="_on_grass_map_big_button_pressed"]
+[connection signal="pressed" from="MapButtons/PinkMapPillarsButton" to="." method="_on_pink_map_pillars_button_pressed"]
+[connection signal="pressed" from="MapButtons/PinkMapRisingButton" to="." method="_on_pink_map_rising_button_pressed"]
+[connection signal="pressed" from="MapButtons/PurpleMapSmallButton" to="." method="_on_purple_map_small_button_pressed"]
+[connection signal="pressed" from="MapButtons/PurpleMapBigButton" to="." method="_on_purple_map_big_button_pressed"]
+[connection signal="pressed" from="MapButtons/CastleMapCagesButton" to="." method="_on_castle_map_cages_button_pressed"]
+[connection signal="pressed" from="MapButtons/CastleWallMapButton" to="." method="_on_castle_wall_map_button_pressed"]
+[connection signal="pressed" from="MapButtons/CastleWallMapRisingLavaButton" to="." method="_on_castle_wall_map_rising_lava_button_pressed"]
+[connection signal="pressed" from="MapButtons/WorkShopMapButton" to="." method="_on_work_shop_map_button_pressed"]
+[connection signal="pressed" from="MapButtons/NightCaveMapButton" to="." method="_on_night_cave_map_button_pressed"]
+[connection signal="pressed" from="MapButtons/GrassMapButton2" to="." method="_on_grass_map_button_2_pressed"]
+[connection signal="pressed" from="MapButtons/GrassMapMovingButton2" to="." method="_on_grass_map_moving_button_2_pressed"]
+[connection signal="pressed" from="MapButtons/GrassMapBigButton2" to="." method="_on_grass_map_big_button_2_pressed"]
+[connection signal="pressed" from="MapButtons/SelectAllButton" to="." method="_on_select_all_button_pressed"]
+[connection signal="pressed" from="MapButtons/SelectNoneButton" to="." method="_on_select_none_button_pressed"]
+[connection signal="pressed" from="MapButtons/ContinueButton" to="." method="_on_continue_button_pressed"]

@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://cl6evpf3vt7ip"]
+
+[ext_resource type="Texture2D" uid="uid://bmift8lxu0fmm" path="res://assets/ringoutborder/ringout1.png" id="1_8rqfr"]
+[ext_resource type="Texture2D" uid="uid://m2matjbqsyaa" path="res://assets/ringoutborder/ringout5.png" id="1_elipy"]
+[ext_resource type="Texture2D" uid="uid://bcxref1imogwy" path="res://assets/ringoutborder/ringout2.png" id="2_lvbqc"]
+[ext_resource type="Texture2D" uid="uid://bw0yqpyil3u6d" path="res://assets/ringoutborder/ringout3.png" id="3_7ufgf"]
+[ext_resource type="Texture2D" uid="uid://pwcwm1v3bq0u" path="res://assets/ringoutborder/ringout4.png" id="4_raftw"]
+[ext_resource type="Texture2D" uid="uid://bsmmwgmgsvgbo" path="res://assets/BigBlack.png" id="6_hblpq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fvirw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_elipy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_raftw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7ufgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lvbqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_8rqfr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lvbqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7ufgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_raftw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="RingoutZone" type="AnimatedSprite2D"]
+z_index = 5
+position = Vector2(294, 156)
+sprite_frames = SubResource("SpriteFrames_fvirw")
+autoplay = "default"
+frame_progress = 0.0144119
+
+[node name="BigBlack" type="Sprite2D" parent="."]
+position = Vector2(439, 12)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_hblpq")
+
+[node name="BigBlack2" type="Sprite2D" parent="."]
+position = Vector2(-443, 12)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_hblpq")
+
+[node name="BigBlack3" type="Sprite2D" parent="."]
+position = Vector2(-1.00003, -353)
+scale = Vector2(0.839999, 0.4)
+texture = ExtResource("6_hblpq")
+
+[node name="BigBlack4" type="Sprite2D" parent="."]
+position = Vector2(-1.00003, 356)
+scale = Vector2(0.839999, 0.4)
+texture = ExtResource("6_hblpq")
