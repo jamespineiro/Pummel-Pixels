@@ -102,13 +102,13 @@ func _process(_delta):
 			elif GameSettings.current_map == "SANDY PLATFORM (1V1)":
 				map_name.add_theme_color_override("font_shadow_color", Color("#e6c9a5",1))
 				map.texture = MAP_1_AND_2
-			elif GameSettings.current_map == "RISING SANDY PLATFORM (1V1)":
+			elif GameSettings.current_map == "SANDY CAVE (HYBRID)":
 				map_name.add_theme_color_override("font_shadow_color", Color("#e6c9a5",1))
 				map.texture = MAP_1_AND_2
 			elif GameSettings.current_map == "GRASSY PLATFORM (1V1)":
 				map_name.add_theme_color_override("font_shadow_color", Color("#6fbf40",1))
 				map.texture = MAP_3_AND_4
-			elif GameSettings.current_map == "RISING GRASSY PLATFORM (1V1)":
+			elif GameSettings.current_map == "GRASSY CAVE (HYBRID)":
 				map_name.add_theme_color_override("font_shadow_color", Color("#6fbf40",1))
 				map.texture = MAP_3_AND_4
 			elif GameSettings.current_map == "PINK MAP PILLARS (2V2)":
@@ -171,11 +171,11 @@ func _on_down_timer_timeout():
 		get_tree().change_scene_to_file("res://scenes/lobby.tscn")
 	elif GameSettings.current_map == "SANDY PLATFORM (1V1)":
 		get_tree().change_scene_to_file("res://scenes/sand_map_platform.tscn")
-	elif GameSettings.current_map == "RISING SANDY PLATFORM (1V1)":
+	elif GameSettings.current_map == "SANDY CAVE (HYBRID)":
 		get_tree().change_scene_to_file("res://scenes/sand_map_cave.tscn")
 	elif GameSettings.current_map == "GRASSY PLATFORM (1V1)":
 		get_tree().change_scene_to_file("res://scenes/green_map_platform.tscn")
-	elif GameSettings.current_map == "RISING GRASSY PLATFORM (1V1)":
+	elif GameSettings.current_map == "GRASSY CAVE (HYBRID)":
 		get_tree().change_scene_to_file("res://scenes/green_map_cave.tscn")
 	elif GameSettings.current_map == "PINK MAP PILLARS (2V2)":
 		get_tree().change_scene_to_file("res://scenes/pink_map_pillars.tscn")

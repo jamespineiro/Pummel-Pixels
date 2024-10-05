@@ -1,4 +1,4 @@
-[gd_scene load_steps=152 format=3 uid="uid://cnw15m64m0dox"]
+[gd_scene load_steps=154 format=3 uid="uid://cnw15m64m0dox"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_etfkp"]
 [ext_resource type="Texture2D" uid="uid://co13tdq34tut3" path="res://assets/Player4/pink_Adventure_Character_Simple.png" id="2_dbrqt"]
@@ -1087,9 +1087,16 @@ height = 26.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yukkb"]
 size = Vector2(12, 10)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o42ap"]
+size = Vector2(15, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6052w"]
+size = Vector2(15, 8)
+
 [node name="player4" type="CharacterBody2D" groups=["players"]]
 visible = false
 z_index = 3
+collision_mask = 13
 script = ExtResource("1_etfkp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -1410,6 +1417,19 @@ text = "0
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="ValidArrowShotLocationArea2D" type="Area2D" parent="."]
+visible = false
+
+[node name="ArrowValidFlippedBox" type="CollisionShape2D" parent="ValidArrowShotLocationArea2D"]
+position = Vector2(-4.5, 3)
+shape = SubResource("RectangleShape2D_o42ap")
+disabled = true
+
+[node name="ArrowValidBox" type="CollisionShape2D" parent="ValidArrowShotLocationArea2D"]
+position = Vector2(4.5, 3)
+shape = SubResource("RectangleShape2D_6052w")
+disabled = true
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="SpecialTimers/CryTimer" to="." method="_on_cry_timer_timeout"]
 [connection signal="timeout" from="SpecialTimers/SlideTimer" to="." method="_on_slide_timer_timeout"]
@@ -1423,3 +1443,5 @@ metadata/_edit_use_anchors_ = true
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="ShieldHurtBox" to="." method="_on_shield_hurt_box_body_entered"]
 [connection signal="body_entered" from="AttackHurtBox" to="." method="_on_attack_hurt_box_body_entered"]
+[connection signal="body_entered" from="ValidArrowShotLocationArea2D" to="." method="_on_valid_arrow_shot_location_area_2d_body_entered"]
+[connection signal="body_exited" from="ValidArrowShotLocationArea2D" to="." method="_on_valid_arrow_shot_location_area_2d_body_exited"]

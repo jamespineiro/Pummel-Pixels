@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var main = get_tree().get_root()
 @onready var arrow = load("res://scenes/arrow.tscn")
 @onready var hit_cloud = load("res://scenes/cloudthatwaswaytoohardtoimplement.tscn")
+@onready var one_way = load("res://scenes/onewayplatforms.gd")
 
 var team_names = ["team-one", "team-two", "team-three", "team-four", "team-red", "team-blue"]
 var player_index = 0
@@ -77,6 +78,7 @@ var starting_position_x : int
 var starting_position_y : int
 var colliding_with_arrow = false
 var starting_round = false
+var can_shoot_arrow = true
 
 @onready var sprite = $AnimatedSprite2D
 
@@ -138,6 +140,8 @@ var killzone_script = preload("res://killzone.gd")
 @onready var shield_block = $SoundEffects/ShieldBlock
 @onready var dodge_sound = $SoundEffects/DodgeSound
 @onready var out_of_arrows_sound = $SoundEffects/OutOfArrowsSound
+@onready var arrow_valid_flipped_box = $ValidArrowShotLocationArea2D/ArrowValidFlippedBox
+@onready var arrow_valid_box = $ValidArrowShotLocationArea2D/ArrowValidBox
 
 var hit = false
 var stunned = false
@@ -160,6 +164,10 @@ var juggernaut = false
 var knockouts = 0
 var dmg_dealt = 0
 var dmg_taken = 0
+var crouching_on_one_way = false
+var jump_button_pressed = false
+var down_pressed = false
+var falling_through_one_way = false
 
 @onready var cry_hitbox_flipped = $CryHitboxFlipped
 @onready var cry_hitbox = $CryHitbox
@@ -271,6 +279,10 @@ func _ready():
 	starting_position_y = int(global_position.y)
 	
 func _physics_process(delta):
+	
+	if dodging and (not arrow_valid_box.disabled or not arrow_valid_flipped_box.disabled):
+		arrow_valid_box.disabled = true
+		arrow_valid_flipped_box.disabled = true
 	
 	if is_on_floor() and starting_round and current_animation != animation.EMOTING:
 		sprite.play("emote")
@@ -446,7 +458,7 @@ func _physics_process(delta):
 		gravity_capped = false
 
 	# Handle jump.
-	if not starting_round and not hit and not dead and Input.is_action_just_pressed("jump"+str(player_index)) and jump_count < 1 and ((current_animation == animation.JUMPING or current_animation == animation.DAIRSPECIALING or current_animation == animation.CLIMBINGLEFT or current_animation == animation.CLIMBINGRIGHT) or (is_on_floor() and current_animation != animation.CRYING)):
+	if not crouching_on_one_way and not starting_round and not hit and not dead and Input.is_action_just_pressed("jump"+str(player_index)) and jump_count < 1 and ((current_animation == animation.JUMPING or current_animation == animation.DAIRSPECIALING or current_animation == animation.CLIMBINGLEFT or current_animation == animation.CLIMBINGRIGHT) or (is_on_floor() and current_animation != animation.CRYING)):
 		if current_animation == animation.DAIRSPECIALING:
 			sprite.play("jumping")
 			current_animation = animation.JUMPING
@@ -455,6 +467,15 @@ func _physics_process(delta):
 		
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1
+	elif Input.is_action_just_pressed("jump"+str(player_index)):
+		jump_button_pressed = true
+	else:
+		jump_button_pressed = false
+		
+	if Input.is_action_just_pressed("down"+str(player_index)):
+		down_pressed = true
+	elif Input.is_action_just_released("down"+str(player_index)):
+		down_pressed = false
 	
 	if not no_arrows and (current_animation == animation.CROSSBOWING or current_animation == animation.AIRCROSSBOWING) and sprite.get_frame() == 2 and not just_shot:
 		shoot_arrow()
@@ -640,6 +661,12 @@ func _input(event):
 				if event.is_action_pressed("atk_neutral"+str(player_index)):
 					if arrows_left > 0:
 						sprite.play("crossbow")
+						arrow_valid_box.disabled = true
+						arrow_valid_flipped_box.disabled = true
+						if sprite.flip_h:
+							arrow_valid_flipped_box.disabled = false
+						else:
+							arrow_valid_box.disabled = false
 						no_arrows = false
 					else:
 						sprite.play("crossbow_no_arrows")
@@ -714,6 +741,12 @@ func _input(event):
 					elif event.is_action_pressed("attack"+str(player_index)):
 						if arrows_left > 0:
 							sprite.play("crossbow")
+							arrow_valid_box.disabled = true
+							arrow_valid_flipped_box.disabled = true
+							if sprite.flip_h:
+								arrow_valid_flipped_box.disabled = false
+							else:
+								arrow_valid_box.disabled = false
 							no_arrows = false
 						else:
 							sprite.play("crossbow_no_arrows")
@@ -789,6 +822,12 @@ func _input(event):
 				elif (event.is_action_pressed("attack"+str(player_index))) and Input.is_action_pressed("up"+str(player_index)):
 					if arrows_left > 0:
 						sprite.play("crossbow")
+						arrow_valid_box.disabled = true
+						arrow_valid_flipped_box.disabled = true
+						if sprite.flip_h:
+							arrow_valid_flipped_box.disabled = false
+						else:
+							arrow_valid_box.disabled = false
 						no_arrows = false
 					else:
 						sprite.play("crossbow_no_arrows")
@@ -839,12 +878,14 @@ func update_health_text():
 	player_health.set_modulate.call_deferred(scoreboard.get_player_health_color(player_index))
 
 func shoot_arrow():
-	if arrows_left > 0:
+	if arrows_left > 0 and can_shoot_arrow:
 		var arrow_instance = arrow.instantiate()
 		arrow_instance.assign_shooter(self)
 		main.add_child.call_deferred(arrow_instance)
 		arrows_left -= 1
 		update_arrow_ui()
+		arrow_valid_box.disabled = true
+		arrow_valid_flipped_box.disabled = true
 	
 func update_arrow_ui():
 	match arrows_left:
@@ -951,6 +992,9 @@ func _on_area_2d_body_exited(body):
 		if body.has_method("assign_shooter"):
 			other_velocity -= arrow_speed
 			arrow_speed = 0
+	elif body is TileMap:
+		if not can_shoot_arrow:
+			can_shoot_arrow = true
 
 func revive():
 	health = 0
@@ -1097,6 +1141,8 @@ func _on_animated_sprite_2d_animation_finished():
 			sprite.flip_h = true
 		elif direction > 0:
 			sprite.flip_h = false
+	arrow_valid_box.disabled = true
+	arrow_valid_flipped_box.disabled = true
 	
 	if stunned and current_animation == animation.HITSTUNNED:
 		stunned = false
@@ -1541,3 +1587,13 @@ func dejuggify():
 		arrows_left = 3
 		update_arrow_ui()
 		scoreboard.update_icons()
+
+func _on_valid_arrow_shot_location_area_2d_body_entered(body):
+	if body is TileMap:
+		if body.get_script() == one_way:
+			can_shoot_arrow = false
+
+func _on_valid_arrow_shot_location_area_2d_body_exited(body):
+	if body is TileMap:
+		if not can_shoot_arrow:
+			can_shoot_arrow = true
