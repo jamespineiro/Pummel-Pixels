@@ -1119,7 +1119,7 @@ script = ExtResource("1_a0epb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_km7pn")
-animation = &"crouching"
+animation = &"side_attack1"
 autoplay = "idle"
 
 [node name="CryHitboxFlipped" type="CollisionShape2D" parent="."]

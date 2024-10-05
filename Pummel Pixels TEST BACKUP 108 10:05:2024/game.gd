@@ -178,6 +178,10 @@ func _process(_delta):
 		map_name = "Sand Map Big"
 		switch_scene("Projectiles")
 		get_tree().change_scene_to_file("res://scenes/green_map_big.tscn")
+	elif Input.is_action_just_pressed("Map 15"):
+		map_name = "Sand Map Bridge"
+		switch_scene("Projectiles")
+		get_tree().change_scene_to_file("res://scenes/sand_bridge_map.tscn")
 	elif Input.is_action_just_pressed("back_to_gamemode_select"):
 		map_name = ""
 		switch_scene("Projectiles")

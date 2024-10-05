@@ -80,8 +80,8 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
-	if (not is_on_floor()) and (((velocity.y * delta) > 7 or gravity_capped) and not hit):
-		velocity.y = 16000 * delta
+	if (not is_on_floor()) and (((velocity.y * delta) > 5 or gravity_capped) and not hit):
+		velocity.y = 12000 * delta
 		gravity_capped = true
 	else:
 		gravity_capped = false
