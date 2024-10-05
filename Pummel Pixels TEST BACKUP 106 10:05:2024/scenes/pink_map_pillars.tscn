@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bq6y207hd23e8"]
+[gd_scene load_steps=22 format=3 uid="uid://bq6y207hd23e8"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_a2i2b"]
 [ext_resource type="Script" path="res://game.gd" id="1_mpedg"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://m0a1trpywm50" path="res://scenes/player3.tscn" id="13_5ahxq"]
 [ext_resource type="PackedScene" uid="uid://cnw15m64m0dox" path="res://scenes/player4.tscn" id="15_itdla"]
 [ext_resource type="PackedScene" uid="uid://byyrobuubiugt" path="res://scenes/playerdummy.tscn" id="16_13mly"]
+[ext_resource type="Script" path="res://camera.gd" id="17_iskpf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fmh2e"]
 
@@ -4694,13 +4695,13 @@ position = Vector2(121, 99)
 
 [node name="Camera2D" type="Camera2D" parent="main"]
 z_index = 1
-position = Vector2(289, 161)
+position = Vector2(294, 161)
 zoom = Vector2(6, 6)
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 1.0
 rotation_smoothing_enabled = true
-rotation_smoothing_speed = 3.0
+script = ExtResource("17_iskpf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="main"]
 offset = Vector2(-600, -125)
