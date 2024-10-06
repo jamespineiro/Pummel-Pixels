@@ -69,15 +69,15 @@ const MAP_NOT_APPROVED = preload("res://assets/MapPhotos/MapNotApproved.png")
 @onready var twovstwo_background = preload("res://assets/MenuUI/TwoVsTwoGamemodeSelectorBackground.png")
 var set_up = false
 
-@onready var maps = ["SANDY PLATFORM (1V1)", "RISING SANDY PLATFORM (1V1)", "BIG SANDY PLATFORM (2V2)",
-"GRASSY PLATFORM (1V1)", "RISING GRASSY PLATFORM (1V1)", "BIG GRASSY PLATFORM (2V2)",
+@onready var maps = ["SANDY PLATFORM (1V1)", "SANDY HEIGHTS (1V1)", "BIG SANDY PLATFORM (2V2)",
+"GRASSY PLATFORM (1V1)", "GRASSY CAVE (HYBRID)", "BIG GRASSY PLATFORM (2V2)",
 "PINK MAP PILLARS (2V2)", "RISING PINK PILLARS (HYBRID)", "PURPLE ISLANDS (1V1)",
 "PURPLE ISLANDS (2V2)", "CASTLE CAGES (LAVA) (HYBRID)", "CASTLE WALL (HYBRID)",
 "DYNAMIC CASTLE WALL (ENVIRONMENTAL) (HYBRID)", "WORKSHOP (HYBRID)", "NIGHT CAVE (HYBRID)",
 "WIP 1", "WIP 2", "WIP 3"]
 
-@onready var chosen_maps = ["SANDY PLATFORM (1V1)", "RISING SANDY PLATFORM (1V1)", "BIG SANDY PLATFORM (2V2)",
-"GRASSY PLATFORM (1V1)", "RISING GRASSY PLATFORM (1V1)", "BIG GRASSY PLATFORM (2V2)",
+@onready var chosen_maps = ["SANDY PLATFORM (1V1)", "SANDY HEIGHTS (1V1)", "BIG SANDY PLATFORM (2V2)",
+"GRASSY PLATFORM (1V1)", "GRASSY CAVE (HYBRID)", "BIG GRASSY PLATFORM (2V2)",
 "PINK MAP PILLARS (2V2)", "RISING PINK PILLARS (HYBRID)", "PURPLE ISLANDS (1V1)",
 "PURPLE ISLANDS (2V2)", "CASTLE CAGES (LAVA) (HYBRID)", "CASTLE WALL (HYBRID)",
 "DYNAMIC CASTLE WALL (ENVIRONMENTAL) (HYBRID)", "WORKSHOP (HYBRID)", "NIGHT CAVE (HYBRID)",
@@ -124,13 +124,13 @@ func _process(_delta):
 		if sand_map_button.has_focus() and map_name_label.text != "SANDY PLATFORM (1V1)":
 			map_name_label.text = "SANDY PLATFORM (1V1)"
 		elif sand_map_moving_button.has_focus() and map_name_label.text != "RISING SANDY PLATFORM (1V1)":
-			map_name_label.text = "RISING SANDY PLATFORM (1V1)"
+			map_name_label.text = "SANDY HEIGHTS (1V1)"
 		elif sand_map_big_button.has_focus() and map_name_label.text != "BIG SANDY PLATFORM (2V2)":
 			map_name_label.text = "BIG SANDY PLATFORM (2V2)"
 		elif grass_map_button.has_focus() and map_name_label.text != "GRASSY PLATFORM (1V1)":
 			map_name_label.text = "GRASSY PLATFORM (1V1)"
 		elif grass_map_moving_button.has_focus() and map_name_label.text != "RISING GRASSY PLATFORM (1V1)":
-			map_name_label.text = "RISING GRASSY PLATFORM (1V1)"
+			map_name_label.text = "GRASSY CAVE (HYBRID)"
 		elif grass_map_big_button.has_focus() and map_name_label.text != "BIG GRASSY PLATFORM (2V2)":
 			map_name_label.text = "BIG GRASSY PLATFORM (2V2)"
 		elif pink_map_pillars_button.has_focus() and map_name_label.text != "PINK PILLARS (2V2)":

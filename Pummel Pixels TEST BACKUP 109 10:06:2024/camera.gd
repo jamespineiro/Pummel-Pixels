@@ -29,7 +29,7 @@ func _ready():
 		size += 1
 	starting_x = global_position.x
 	starting_y = global_position.y
-	position_smoothing_speed = 2.5
+	position_smoothing_speed = 3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
