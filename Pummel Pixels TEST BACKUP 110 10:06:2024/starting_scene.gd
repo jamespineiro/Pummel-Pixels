@@ -28,6 +28,7 @@ func _process(_delta):
 	if stage.global_position.y < 40:
 		if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("attack0") or Input.is_action_just_pressed("special0") or Input.is_action_just_pressed("dodge0") or Input.is_action_just_pressed("jump0")  or Input.is_action_just_pressed("atk_neutral0")  or Input.is_action_just_pressed("special_neutral0")  or Input.is_action_just_pressed("sprint0"):
 			play.visible = false
+			tile_map.position = Vector2(-2, -169)
 			if not player_animation_started:
 				for player in players:
 					player.play("scared")

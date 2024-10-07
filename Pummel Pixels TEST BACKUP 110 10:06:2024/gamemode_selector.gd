@@ -123,13 +123,13 @@ func _process(_delta):
 		
 		if sand_map_button.has_focus() and map_name_label.text != "SANDY PLATFORM (1V1)":
 			map_name_label.text = "SANDY PLATFORM (1V1)"
-		elif sand_map_moving_button.has_focus() and map_name_label.text != "RISING SANDY PLATFORM (1V1)":
+		elif sand_map_moving_button.has_focus() and map_name_label.text != "SANDY HEIGHTS (1V1)":
 			map_name_label.text = "SANDY HEIGHTS (1V1)"
 		elif sand_map_big_button.has_focus() and map_name_label.text != "BIG SANDY PLATFORM (2V2)":
 			map_name_label.text = "BIG SANDY PLATFORM (2V2)"
 		elif grass_map_button.has_focus() and map_name_label.text != "GRASSY PLATFORM (1V1)":
 			map_name_label.text = "GRASSY PLATFORM (1V1)"
-		elif grass_map_moving_button.has_focus() and map_name_label.text != "RISING GRASSY PLATFORM (1V1)":
+		elif grass_map_moving_button.has_focus() and map_name_label.text != "GRASSY CAVE (HYBRID)":
 			map_name_label.text = "GRASSY CAVE (HYBRID)"
 		elif grass_map_big_button.has_focus() and map_name_label.text != "BIG GRASSY PLATFORM (2V2)":
 			map_name_label.text = "BIG GRASSY PLATFORM (2V2)"
@@ -387,7 +387,7 @@ func _on_sand_map_button_pressed():
 	edit_chosen_maps_array("SANDY PLATFORM (1V1)", $MapButtons/SandMapButton/ButtonApproval)
 
 func _on_sand_map_moving_button_pressed():
-	edit_chosen_maps_array("RISING SANDY PLATFORM (1V1)", $MapButtons/SandMapMovingButton/ButtonApproval)
+	edit_chosen_maps_array("SANDY HEIGHTS (1V1)", $MapButtons/SandMapMovingButton/ButtonApproval)
 
 func _on_sand_map_big_button_pressed():
 	edit_chosen_maps_array( "BIG SANDY PLATFORM (2V2)", $MapButtons/SandMapBigButton/ButtonApproval)
@@ -396,7 +396,7 @@ func _on_grass_map_button_pressed():
 	edit_chosen_maps_array( "GRASSY PLATFORM (1V1)", $MapButtons/GrassMapButton/ButtonApproval)
 
 func _on_grass_map_moving_button_pressed():
-	edit_chosen_maps_array( "RISING GRASSY PLATFORM (1V1)", $MapButtons/GrassMapMovingButton/ButtonApproval)
+	edit_chosen_maps_array( "GRASSY CAVE (HYBRID)", $MapButtons/GrassMapMovingButton/ButtonApproval)
 
 func _on_grass_map_big_button_pressed():
 	edit_chosen_maps_array( "BIG GRASSY PLATFORM (2V2)",$MapButtons/GrassMapBigButton/ButtonApproval)
@@ -441,10 +441,10 @@ func _on_select_all_button_pressed():
 	chosen_maps = []
 	
 	edit_chosen_maps_array("SANDY PLATFORM (1V1)", $MapButtons/SandMapButton/ButtonApproval)
-	edit_chosen_maps_array("RISING SANDY PLATFORM (1V1)", $MapButtons/SandMapMovingButton/ButtonApproval)
+	edit_chosen_maps_array("SANDY HEIGHTS (1V1)", $MapButtons/SandMapMovingButton/ButtonApproval)
 	edit_chosen_maps_array( "BIG SANDY PLATFORM (2V2)", $MapButtons/SandMapBigButton/ButtonApproval)
 	edit_chosen_maps_array( "GRASSY PLATFORM (1V1)", $MapButtons/GrassMapButton/ButtonApproval)
-	edit_chosen_maps_array( "RISING GRASSY PLATFORM (1V1)", $MapButtons/GrassMapMovingButton/ButtonApproval)
+	edit_chosen_maps_array( "GRASSY CAVE (HYBRID)", $MapButtons/GrassMapMovingButton/ButtonApproval)
 	edit_chosen_maps_array( "BIG GRASSY PLATFORM (2V2)",$MapButtons/GrassMapBigButton/ButtonApproval)
 	edit_chosen_maps_array( "PINK MAP PILLARS (2V2)",$MapButtons/PinkMapPillarsButton/ButtonApproval )
 	edit_chosen_maps_array( "RISING PINK PILLARS (HYBRID)",$MapButtons/PinkMapRisingButton/ButtonApproval )
@@ -464,10 +464,10 @@ func _on_select_none_button_pressed():
 	chosen_maps.append_array(maps)
 	
 	edit_chosen_maps_array("SANDY PLATFORM (1V1)", $MapButtons/SandMapButton/ButtonApproval)
-	edit_chosen_maps_array("RISING SANDY PLATFORM (1V1)", $MapButtons/SandMapMovingButton/ButtonApproval)
+	edit_chosen_maps_array("SANDY HEIGHTS (1V1)", $MapButtons/SandMapMovingButton/ButtonApproval)
 	edit_chosen_maps_array( "BIG SANDY PLATFORM (2V2)", $MapButtons/SandMapBigButton/ButtonApproval)
 	edit_chosen_maps_array( "GRASSY PLATFORM (1V1)", $MapButtons/GrassMapButton/ButtonApproval)
-	edit_chosen_maps_array( "RISING GRASSY PLATFORM (1V1)", $MapButtons/GrassMapMovingButton/ButtonApproval)
+	edit_chosen_maps_array( "GRASSY CAVE (HYBRID)", $MapButtons/GrassMapMovingButton/ButtonApproval)
 	edit_chosen_maps_array( "BIG GRASSY PLATFORM (2V2)",$MapButtons/GrassMapBigButton/ButtonApproval)
 	edit_chosen_maps_array( "PINK MAP PILLARS (2V2)",$MapButtons/PinkMapPillarsButton/ButtonApproval )
 	edit_chosen_maps_array( "RISING PINK PILLARS (HYBRID)",$MapButtons/PinkMapRisingButton/ButtonApproval )
