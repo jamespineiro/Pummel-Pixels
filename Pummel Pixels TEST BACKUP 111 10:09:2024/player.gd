@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var main = get_tree().get_root()
 @onready var arrow = load("res://scenes/arrow.tscn")
-@onready var hit_cloud = load("res://scenes/cloudthatwaswaytoohardtoimplement.tscn")
+@onready var particles = load("res://scenes/cloudthatwaswaytoohardtoimplement.tscn")
 @onready var one_way = load("res://scenes/onewayplatforms.gd")
 
 var team_names = ["team-one", "team-two", "team-three", "team-four", "team-red", "team-blue"]
@@ -168,11 +168,15 @@ var crouching_on_one_way = false
 var jump_button_pressed = false
 var down_pressed = false
 var falling_through_one_way = false
+@onready var fall_cloud_timer = $FallCloudTimer
 
 @onready var cry_hitbox_flipped = $CryHitboxFlipped
 @onready var cry_hitbox = $CryHitbox
 @onready var crouch_slide_hitbox = $CrouchSlideHitbox
 @onready var collision_shape_2d = $CollisionShape2D
+var pre_jump_height = 0
+var post_jump_height = 0
+var fall_cloud = false
 
 func _ready():
 	if name == "player":
@@ -280,6 +284,16 @@ func _ready():
 	
 func _physics_process(delta):
 	
+	if is_on_floor() and not hit and current_animation == animation.JUMPING:
+		post_jump_height = global_position.y
+		if (abs(int(post_jump_height-pre_jump_height)) > 30 and fall_cloud) and gravity_capped:
+			var movement_landing_cloud = particles.instantiate()
+			movement_landing_cloud.assign_player(self, "movement_landing_cloud")
+			main.add_child.call_deferred(movement_landing_cloud)
+			fall_cloud = false
+		elif fall_cloud:
+			fall_cloud = false
+	
 	if dodging and (not arrow_valid_box.disabled or not arrow_valid_flipped_box.disabled):
 		arrow_valid_box.disabled = true
 		arrow_valid_flipped_box.disabled = true
@@ -354,7 +368,7 @@ func _physics_process(delta):
 					current_animation = animation.IDLE
 			if Input.is_action_just_pressed("sprint"+str(player_index)):
 				SPEED = CHARGING_SPEED
-				if direction != 0 and current_animation != animation.SHIELDING and current_animation != animation.AIRSHIELDING and current_animation != animation.AIRCRYING and current_animation != animation.GROUNDAIRUPATTACKING and current_animation != animation.AIRSHIELDING and current_animation != animation.NEUTRALDODGING and current_animation != animation.SAIRATTACK and current_animation != animation.UPDODGING and current_animation != animation.DOWNDODGING and current_animation != animation.SIDEDODGING and current_animation != animation.AIRUPATTACKING and current_animation != animation.DAIRSPECIALING and current_animation != animation.AIRPUNCHING and current_animation != animation.CROSSBOWING and current_animation != animation.AIRCROSSBOWING and current_animation != animation.AIRSPECIALING and current_animation != animation.SATTACK1 and current_animation != animation.SATTACK2 and current_animation != animation.SATTACK3:
+				if direction != 0 and current_animation != animation.SLIDING and current_animation != animation.SHIELDING and current_animation != animation.AIRSHIELDING and current_animation != animation.AIRCRYING and current_animation != animation.GROUNDAIRUPATTACKING and current_animation != animation.AIRSHIELDING and current_animation != animation.NEUTRALDODGING and current_animation != animation.SAIRATTACK and current_animation != animation.UPDODGING and current_animation != animation.DOWNDODGING and current_animation != animation.SIDEDODGING and current_animation != animation.AIRUPATTACKING and current_animation != animation.DAIRSPECIALING and current_animation != animation.AIRPUNCHING and current_animation != animation.CROSSBOWING and current_animation != animation.AIRCROSSBOWING and current_animation != animation.AIRSPECIALING and current_animation != animation.SATTACK1 and current_animation != animation.SATTACK2 and current_animation != animation.SATTACK3:
 					sprite.play("side_special_ground")
 					current_animation = animation.CHARGING
 			elif (Input.is_action_just_released("sprint" + str(player_index))):
@@ -366,9 +380,6 @@ func _physics_process(delta):
 					elif (current_animation != animation.SATTACK1 and current_animation != animation.CRYING and current_animation != animation.AIRCRYING and current_animation != animation.DOWNATTACKING and current_animation != animation.CROUCHING and current_animation != animation.SATTACK2 and current_animation != animation.SATTACK3 and current_animation != animation.AIRCRYING and current_animation != animation.AIRSHIELDING and current_animation != animation.GROUNDAIRUPATTACKING and current_animation != animation.SHIELDING and current_animation != animation.NEUTRALDODGING and current_animation != animation.SAIRATTACK and current_animation != animation.UPDODGING and current_animation != animation.DOWNDODGING and current_animation != animation.SIDEDODGING and current_animation != animation.AIRDOWNATTACKING and current_animation != animation.AIRUPATTACKING and current_animation != animation.GLIDING and current_animation != animation.DAIRSPECIALING and current_animation != animation.AIRPUNCHING and current_animation != animation.CROSSBOWING and current_animation != animation.AIRCROSSBOWING and current_animation != animation.AIRSPECIALING):
 						sprite.play("jumping")
 						current_animation = animation.JUMPING
-			elif jump_count > 0 and velocity.y > -200 and Input.is_action_just_pressed("jump"+str(player_index)) and not is_on_wall() and current_animation != animation.AIRCRYING and current_animation != animation.GROUNDAIRUPATTACKING and current_animation != animation.AIRSHIELDING and current_animation != animation.NEUTRALDODGING and current_animation != animation.SAIRATTACK and current_animation != animation.UPDODGING and current_animation != animation.DOWNDODGING and current_animation != animation.SIDEDODGING and current_animation != animation.AIRUPATTACKING and current_animation != animation.DAIRSPECIALING and current_animation != animation.AIRPUNCHING and current_animation != animation.CROSSBOWING and current_animation != animation.AIRCROSSBOWING and current_animation != animation.AIRSPECIALING:
-				sprite.play("gliding")
-				current_animation = animation.GLIDING
 			elif not colliding_with_arrow and is_on_wall() and current_animation != animation.GROUNDAIRUPATTACKING and current_animation != animation.AIRCRYING and current_animation != animation.AIRSHIELDING and current_animation != animation.SAIRATTACK and current_animation != animation.NEUTRALDODGING and current_animation != animation.UPDODGING and current_animation != animation.DOWNDODGING and current_animation != animation.SIDEDODGING and current_animation != animation.AIRDOWNATTACKING and current_animation != animation.AIRUPATTACKING and current_animation != animation.GLIDING and current_animation != animation.DAIRSPECIALING and current_animation != animation.AIRPUNCHING and current_animation != animation.CROSSBOWING and current_animation != animation.AIRCROSSBOWING and current_animation != animation.AIRSPECIALING:
 				if direction < 0:
 					sprite.play("climbing_left")
@@ -459,6 +470,11 @@ func _physics_process(delta):
 
 	# Handle jump.
 	if not crouching_on_one_way and not starting_round and not hit and not dead and Input.is_action_just_pressed("jump"+str(player_index)) and jump_count < 1 and ((current_animation == animation.JUMPING or current_animation == animation.DAIRSPECIALING or current_animation == animation.CLIMBINGLEFT or current_animation == animation.CLIMBINGRIGHT) or (is_on_floor() and current_animation != animation.CRYING)):
+		pre_jump_height = global_position.y
+		fall_cloud_timer.start()
+		if current_animation == animation.CLIMBINGLEFT or current_animation == animation.CLIMBINGRIGHT:
+			fall_cloud_timer.stop()
+		
 		if current_animation == animation.DAIRSPECIALING:
 			sprite.play("jumping")
 			current_animation = animation.JUMPING
@@ -574,8 +590,8 @@ func _physics_process(delta):
 			
 			if abs(impact_x_velocity) > 1000 or abs(impact_y_velocity) > 1000:
 				if cloud_frames == CLOUD_STARTING_FRAMES:
-					var cloud_instance = hit_cloud.instantiate()
-					cloud_instance.assign_player(self)
+					var cloud_instance = particles.instantiate()
+					cloud_instance.assign_player(self, "hitcloud")
 					main.add_child.call_deferred(cloud_instance)
 				cloud_frames -= 1
 				if cloud_frames <= 0:
@@ -1597,3 +1613,7 @@ func _on_valid_arrow_shot_location_area_2d_body_exited(body):
 	if body is TileMap:
 		if not can_shoot_arrow:
 			can_shoot_arrow = true
+
+func _on_fall_cloud_timer_timeout():
+	fall_cloud = true
+	fall_cloud_timer.stop()

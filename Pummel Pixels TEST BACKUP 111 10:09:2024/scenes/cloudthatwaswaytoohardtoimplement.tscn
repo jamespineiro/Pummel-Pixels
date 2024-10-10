@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://7kswd885ryks"]
+[gd_scene load_steps=42 format=3 uid="uid://7kswd885ryks"]
 
 [ext_resource type="Texture2D" uid="uid://dtxkobpdnvs45" path="res://assets/Player4/blue1.png" id="1_3b0ok"]
 [ext_resource type="Texture2D" uid="uid://5uhi1ceymnbc" path="res://assets/CloudPack/FX002/orange1.png" id="1_f56iv"]
@@ -21,12 +21,16 @@
 [ext_resource type="Texture2D" uid="uid://tobtbfncraeu" path="res://assets/CloudPack/FX003/purple3.png" id="8_jwpas"]
 [ext_resource type="Texture2D" uid="uid://4h6ndmsn2ttd" path="res://assets/CloudPack/FX003/purple4.png" id="9_7dgkp"]
 [ext_resource type="Texture2D" uid="uid://d0hhw4mlosme" path="res://assets/CloudPack/FX003/purple5.png" id="10_n1rg6"]
+[ext_resource type="Texture2D" uid="uid://h5cnesr7g87d" path="res://assets/movementparticles/FX052_nyknck/FX052_01.png" id="11_4um0j"]
 [ext_resource type="Texture2D" uid="uid://gsup6etqo143" path="res://assets/Player4/pink1.png" id="11_4wjp7"]
 [ext_resource type="Texture2D" uid="uid://deb431juea1jw" path="res://assets/CloudPack/FX001/white1.png" id="11_fhvd0"]
 [ext_resource type="Texture2D" uid="uid://datfpn5w1tlux" path="res://assets/Player4/pink2.png" id="12_0xwcp"]
 [ext_resource type="Texture2D" uid="uid://djg8x0s6t74o2" path="res://assets/CloudPack/FX001/white2.png" id="12_cci3r"]
+[ext_resource type="Texture2D" uid="uid://wsmw5ivqryml" path="res://assets/movementparticles/FX052_nyknck/FX052_02.png" id="12_npxyx"]
 [ext_resource type="Texture2D" uid="uid://cfevrr468xg0q" path="res://assets/CloudPack/FX001/white3.png" id="13_ay3uv"]
 [ext_resource type="Texture2D" uid="uid://olrx5eu7xhpx" path="res://assets/Player4/pink3.png" id="13_p0s2e"]
+[ext_resource type="Texture2D" uid="uid://dd4gndy4wicbj" path="res://assets/movementparticles/FX052_nyknck/FX052_03.png" id="13_q1er1"]
+[ext_resource type="Texture2D" uid="uid://dj07wdrwbaomj" path="res://assets/movementparticles/FX052_nyknck/FX052_04.png" id="14_37qoh"]
 [ext_resource type="Texture2D" uid="uid://dna1tnddos041" path="res://assets/CloudPack/FX001/white4.png" id="14_43iex"]
 [ext_resource type="Texture2D" uid="uid://dsqori5ec74md" path="res://assets/Player4/pink4.png" id="14_wlc8v"]
 [ext_resource type="Texture2D" uid="uid://hrcc38rqst5m" path="res://assets/CloudPack/FX001/white5.png" id="15_gmpog"]
@@ -77,6 +81,23 @@ animations = [{
 }],
 "loop": false,
 "name": &"greencloud",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_4um0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_npxyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_q1er1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_37qoh")
+}],
+"loop": false,
+"name": &"movement_landing_cloud",
 "speed": 10.0
 }, {
 "frames": [{
@@ -183,7 +204,9 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_qcymo")
-animation = &"bluecloud"
+animation = &"movement_landing_cloud"
+frame = 3
+frame_progress = 1.0
 script = ExtResource("1_gtdb1")
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

@@ -1102,8 +1102,8 @@ height = 20.0
 radius = 11.0
 height = 26.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6182"]
-size = Vector2(12, 10)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixi4f"]
+size = Vector2(8, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tb1bw"]
 size = Vector2(15, 8)
@@ -1429,8 +1429,9 @@ shape = SubResource("CapsuleShape2D_q2x3c")
 disabled = true
 
 [node name="AirDownAttackBox" type="CollisionShape2D" parent="AttackHurtBox"]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_k6182")
+visible = false
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_ixi4f")
 disabled = true
 
 [node name="ValidArrowShotLocationArea2D" type="Area2D" parent="."]
@@ -1445,6 +1446,9 @@ disabled = true
 position = Vector2(4.5, 3)
 shape = SubResource("RectangleShape2D_k47vr")
 disabled = true
+
+[node name="FallCloudTimer" type="Timer" parent="."]
+wait_time = 1.5
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="SpecialTimers/CryTimer" to="." method="_on_cry_timer_timeout"]
@@ -1461,3 +1465,4 @@ disabled = true
 [connection signal="body_entered" from="AttackHurtBox" to="." method="_on_attack_hurt_box_body_entered"]
 [connection signal="body_entered" from="ValidArrowShotLocationArea2D" to="." method="_on_valid_arrow_shot_location_area_2d_body_entered"]
 [connection signal="body_exited" from="ValidArrowShotLocationArea2D" to="." method="_on_valid_arrow_shot_location_area_2d_body_exited"]
+[connection signal="timeout" from="FallCloudTimer" to="." method="_on_fall_cloud_timer_timeout"]

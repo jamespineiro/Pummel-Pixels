@@ -113,7 +113,7 @@ func _physics_process(delta):
 			if abs(impact_x_velocity) > 1000 or abs(impact_y_velocity) > 1000:
 				if cloud_frames == CLOUD_STARTING_FRAMES:
 					var cloud_instance = hit_cloud.instantiate()
-					cloud_instance.assign_player(self)
+					cloud_instance.assign_player(self, "hitcloud")
 					main.add_child.call_deferred(cloud_instance)
 				cloud_frames -= 1
 				if cloud_frames <= 0:
